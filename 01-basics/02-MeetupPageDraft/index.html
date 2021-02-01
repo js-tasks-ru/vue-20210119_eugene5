@@ -38,7 +38,7 @@
               </div>
 
               <div class="meetup-agenda__item-col">
-                <h5 v-html="agenda.title" class="meetup-agenda__title"></h5>
+                <h5 class="meetup-agenda__title"> {{ agenda.title }}</h5>
 
                 <p v-if="agenda.type === 'talk'">
                   <span>{{ agenda.speaker }}</span>
