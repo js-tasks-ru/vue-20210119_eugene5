@@ -18,18 +18,16 @@ export const CounterButton = {
   // Компонент должен иметь модель
   data() {
     return {
-      currentCount: this.value || this.count,
+      currentCount: this.count || this.value,
     };
   },
 
   // Шаблон лучше держать максимально простым, а логику выносить в методы
   methods: {
     increment() {
-      if (this.count) {
-        this.$emit('increment', ++this.currentCount);
-      } else {
-        this.$emit('input', ++this.currentCount);
-      }
+      ++this.currentCount;
+      this.$emit('increment', this.currentCount);
+      this.$emit('input', this.currentCount);
     },
   },
 };
